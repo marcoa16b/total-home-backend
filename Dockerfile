@@ -16,6 +16,12 @@ COPY . .
 # Build the application
 RUN npm run build
 
+# Change to the production build directory
+WORKDIR .medusa/server
+
+# Install only production dependencies in the build directory
+RUN npm ci --only=production
+
 # Expose port
 EXPOSE 9000
 

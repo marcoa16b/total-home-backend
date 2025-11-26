@@ -23,7 +23,7 @@ services:
       - postgres
       - redis
     environment:
-      DATABASE_URL: postgres://medusa:medusa_password@postgres:5432/medusa
+      DATABASE_URL: postgres://medusa:medusa_password@postgres:5432/medusa?sslmode=disable
       REDIS_URL: redis://redis:6379
       STORE_CORS: ${STORE_CORS}
       ADMIN_CORS: ${ADMIN_CORS}
